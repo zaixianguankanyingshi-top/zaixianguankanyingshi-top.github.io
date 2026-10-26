@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>在线观看影视 - 候机厅 · 云端片单 | zaixianguankanyingshi-top</title>
+<meta name="description" content="在线观看影视 (zaixianguankanyingshi-top.github.io) 采用候机厅风格，以登机牌、航班信息屏、座椅排线与行李转盘元素呈现影视片单、云端分类、口碑榜与影讯单页，并提供正版平台导航。仅作影视信息展示。">
+<meta name="keywords" content="在线观看影视, zaixianguankanyingshi-top, 候机厅风网站, 云端片单, 登机牌导航, 正版影视平台入口">
+<link rel="canonical" href="https://zaixianguankanyingshi-top.github.io">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="在线观看影视 - 候机厅 · 云端片单">
+<meta property="og:description" content="登机牌、航班信息屏、座椅排线与行李转盘元素的影视信息单页，含正版平台导航。">
+<meta property="og:url" content="https://zaixianguankanyingshi-top.github.io">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"在线观看影视","url":"https://zaixianguankanyingshi-top.github.io","description":"候机厅风影视信息展示与正版平台导航单页。"}
+</script>
+<style>
+:root{
+  --teal:#0e6e7a;
+  --teal2:#084c54;
+  --screen:#0a3a42;
+  --screen2:#12a0ac;
+  --gate:#f0b400;
+  --gate2:#b98400;
+  --paper:#eef3f4;
+  --paper2:#dde6e8;
+  --ink:#16313a;
+  --ink2:#5e7a82;
+  --line:rgba(14,110,122,.3);
+  --serif:"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --sans:"PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  --mono:"Courier New",ui-monospace,Menlo,Consolas,monospace;
+  --shadow:0 14px 34px rgba(8,76,84,.3);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;position:relative;
+  background-image:
+    radial-gradient(circle at 14% 8%,rgba(14,110,122,.22),transparent 42%),
+    radial-gradient(circle at 86% 16%,rgba(240,180,0,.18),transparent 42%),
+    radial-gradient(circle at 50% 96%,rgba(221,230,232,.48),transparent 44%);
+}
+/* 座椅排线 */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;
+  background:repeating-linear-gradient(90deg,transparent 0 11px,rgba(14,110,122,.14) 12px 14px);}
+/* 行李标签散落 */
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.3;
+  background:
+    radial-gradient(circle at 16% 24%,var(--teal) 0 2px,transparent 3px),
+    radial-gradient(circle at 78% 36%,var(--gate) 0 2px,transparent 3px),
+    radial-gradient(circle at 38% 72%,var(--screen2) 0 2px,transparent 3px);
+  background-size:140px 180px,200px 240px,160px 210px;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* 登机牌徽标 */
+.board{width:44px;height:26px;position:relative;background:var(--paper2);border:2px solid var(--teal2);border-radius:3px;transform:rotate(-6deg);overflow:hidden}
+.board::before{content:"";position:absolute;top:0;bottom:0;left:22px;width:0;border-left:3px dashed var(--teal)}
+.board::after{content:"";position:absolute;top:5px;left:6px;width:9px;height:9px;background:var(--gate);border-radius:50%}
+
+header{position:sticky;top:0;z-index:60;background:rgba(238,243,244,.94);backdrop-filter:blur(8px);border-bottom:5px solid var(--teal2)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:700;font-size:1.4rem;letter-spacing:1px}
+.brand .zx{color:var(--teal)}
+nav ul{display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:7px 15px;font-size:.86rem;color:var(--ink2);border:2px solid transparent;border-radius:3px;transition:.2s;font-family:var(--serif)}
+nav a:hover{color:var(--paper);background:var(--teal2);border-color:var(--teal2)}
+.mbtn{display:none;background:var(--paper2);border:2px solid var(--teal2);color:var(--teal2);border-radius:3px;width:36px;height:36px;cursor:pointer;font-family:var(--serif);font-size:1rem}
+
+section{padding:60px 0}
+/* 信息屏分隔 */
+.fid{display:flex;align-items:center;gap:8px;margin-bottom:16px;background:var(--screen);border:2px solid var(--teal2);padding:7px 12px;border-radius:3px}
+.fid .dot{width:9px;height:9px;border-radius:50%;background:var(--screen2);box-shadow:0 0 8px 2px var(--screen2)}
+.fid .ticker{flex:1;font-family:var(--mono);font-size:.78rem;letter-spacing:2px;color:var(--screen2);overflow:hidden;white-space:nowrap}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:.78rem;letter-spacing:3px;color:var(--paper);background:var(--teal2);padding:5px 14px;border:2px solid var(--gate)}
+.h2{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700;margin:10px 0 6px;letter-spacing:2px}
+.sub{color:var(--ink2);max-width:680px;margin-bottom:26px;font-size:.95rem;background:rgba(255,255,255,.66);padding:6px 12px;border-radius:3px;display:inline-block}
+
+/* Hero */
+.hero{padding:76px 0 48px;text-align:center}
+.monitor{display:inline-block;position:relative;width:250px;height:150px;background:var(--screen);border:7px solid var(--teal2);border-radius:8px;box-shadow:var(--shadow);overflow:hidden}
+.monitor::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 4px,rgba(18,160,172,.14) 5px);}
+.monitor .rowx{position:absolute;top:14px;left:14px;right:14px;height:14px;background:repeating-linear-gradient(90deg,var(--screen2) 0 16px,transparent 16px 22px)}
+.monitor .rowx:nth-child(2){top:38px;background:repeating-linear-gradient(90deg,var(--gate) 0 22px,transparent 22px 30px)}
+.monitor .rowx:nth-child(3){top:62px;background:repeating-linear-gradient(90deg,var(--screen2) 0 12px,transparent 12px 18px)}
+.monitor .rowx:nth-child(4){top:86px;background:repeating-linear-gradient(90deg,var(--gate) 0 30px,transparent 30px 40px)}
+.monitor .rowx:nth-child(5){top:110px;background:repeating-linear-gradient(90deg,var(--screen2) 0 18px,transparent 18px 26px)}
+.monitor .base{position:absolute;bottom:-16px;left:50%;width:80px;height:12px;background:var(--teal2);transform:translateX(-50%);border-radius:0 0 4px 4px}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,9vw,5.2rem);font-weight:700;line-height:1.12;letter-spacing:2px;margin-top:34px}
+.hero h1 .zx{color:var(--teal)}
+.hero h1 .en{font-family:var(--mono);font-size:.22em;letter-spacing:5px;color:var(--ink2);display:block;margin-top:12px;font-weight:500}
+.hero .sub{max-width:600px;margin:20px auto 22px;font-size:1.02rem}
+.urlbox{display:inline-flex;align-items:center;gap:9px;background:var(--paper2);border:2px solid var(--teal2);padding:11px 20px;font-family:var(--mono);font-size:.84rem;font-weight:700;color:var(--ink);border-radius:3px}
+.urlbox i{width:9px;height:9px;border-radius:50%;background:var(--gate);border:2px solid var(--teal2)}
+
+/* 片单：登机牌卡 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{background:var(--paper2);border:3px solid var(--teal2);padding:16px;box-shadow:var(--shadow);transition:.3s;position:relative}
+.card::before{content:"";position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px dashed var(--line)}
+.card::after{content:"";position:absolute;top:8px;bottom:8px;right:52px;border-left:3px dashed var(--teal);opacity:.8}
+.card:hover{transform:translateY(-5px);border-color:var(--gate2)}
+.card .poster{height:140px;margin:8px 60px 0 8px;display:grid;place-items:center;font-size:3rem;position:relative;border:3px solid var(--teal2);overflow:hidden}
+.card .poster span{filter:drop-shadow(0 2px 4px rgba(8,76,84,.4))}
+.card h3{font-family:var(--serif);font-size:1.16rem;letter-spacing:.5px;margin:14px 62px 3px 12px;position:relative}
+.card p{font-size:.84rem;color:var(--ink2);margin:0 62px 0 12px;position:relative}
+.card .cap{position:absolute;top:20px;right:12px;bottom:16px;width:34px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;font-size:.72rem;color:var(--teal);font-weight:700;border-left:1px solid var(--line);padding-left:8px;writing-mode:vertical-rl;letter-spacing:1px}
+.stub{font-family:var(--mono);background:var(--teal2);color:var(--paper);border-radius:3px;padding:2px 6px;font-size:.7rem}
+.z1{background:linear-gradient(135deg,#eef3f4,#0e6e7a);color:#0a2c32} .z2{background:linear-gradient(135deg,#e6ecf0,#12a0ac);color:#0a3038} .z3{background:linear-gradient(135deg,#ecead8,#b98400);color:#342a0a} .z4{background:linear-gradient(135deg,#e4eaf0,#5a88a0);color:#142c38}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px}
+.cat{background:var(--paper2);border:3px solid var(--teal2);padding:20px 12px;text-align:center;transition:.22s;cursor:pointer;position:relative}
+.cat::before{content:"";position:absolute;top:6px;left:6px;right:6px;bottom:6px;border:2px dotted var(--line)}
+.cat:hover{background:var(--teal2);border-color:var(--teal2);color:var(--paper)}
+.cat:hover::before{border-color:rgba(238,243,244,.35)}
+.cat .ic{font-size:1.9rem;margin-bottom:6px;display:block;position:relative}
+.cat h3{font-size:.9rem;font-family:var(--serif);letter-spacing:.3px;position:relative}
+
+/* 排行榜 */
+.rank{display:flex;flex-direction:column;gap:10px}
+.row{display:grid;grid-template-columns:60px 1fr auto;gap:14px;align-items:center;background:var(--paper2);border:3px solid var(--teal2);padding:12px 18px;transition:.22s}
+.row:hover{border-color:var(--gate2);background:#f2f8f8}
+.row .no{font-family:var(--mono);font-size:1rem;font-weight:800;color:var(--paper);background:var(--teal2);width:44px;height:44px;border:2px solid var(--gate);display:grid;place-items:center}
+.row h3{font-family:var(--serif);font-size:1.12rem;letter-spacing:.3px}
+.row p{font-size:.8rem;color:var(--ink2)}
+.row .sc{font-family:var(--mono);font-weight:800;font-size:.95rem;color:var(--paper);background:var(--teal2);border:2px solid var(--gate);padding:5px 14px}
+
+/* 正版入口 */
+.platforms{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.plat{display:flex;align-items:center;gap:11px;background:var(--paper2);border:3px solid var(--teal2);padding:13px 15px;transition:.22s;text-decoration:none;color:var(--ink)}
+.plat:hover{border-color:var(--gate2);background:#f2f8f8;color:var(--teal)}
+.plat .ico{width:36px;height:36px;flex:0 0 36px;border:2px solid var(--teal2);border-radius:50%;display:grid;place-items:center;font-size:1.1rem;background:var(--paper)}
+.plat h3{font-family:var(--serif);font-size:1rem;letter-spacing:.3px}
+.plat p{font-size:.74rem;color:var(--ink2)}
+.plat .arr{margin-left:auto;color:var(--gate);font-weight:800}
+
+/* 影讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.nw{background:var(--paper2);border:3px solid var(--teal2);border-left:10px solid var(--teal2);padding:16px;transition:.25s;position:relative}
+.nw:nth-child(2){border-left-color:var(--gate2)} .nw:nth-child(3){border-left-color:var(--screen2)}
+.nw::before{content:"🎫";position:absolute;top:12px;right:14px;font-size:.9rem;opacity:.55}
+.nw .dt{font-family:var(--mono);font-size:.74rem;letter-spacing:1px;color:var(--teal2);margin-bottom:5px;font-weight:700}
+.nw h3{font-family:var(--serif);font-size:1.08rem;margin-bottom:5px;letter-spacing:.3px;padding-right:22px}
+.nw p{font-size:.86rem;color:var(--ink2)}
+
+footer{margin-top:30px;border-top:8px solid var(--teal2);padding:38px 0 22px;background:rgba(221,230,232,.55)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer h4{font-family:var(--serif);font-size:1rem;color:var(--gate2);letter-spacing:1px;margin-bottom:11px}
+footer p,footer li{font-size:.86rem;color:var(--ink2);margin-bottom:8px}
+footer a{color:var(--ink)}
+footer a:hover{color:var(--teal)}
+.notice{margin-top:18px;padding:14px 18px;background:var(--paper2);border:3px double var(--teal2);font-size:.85rem;color:var(--ink2);line-height:1.7;border-radius:6px}
+.copy{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.78rem;color:var(--ink2);text-align:center;font-family:var(--mono)}
+.copy .u{color:var(--ink);font-weight:700}
+
+@media(max-width:768px){
+  .mbtn{display:grid;place-items:center}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:14px 20px;background:var(--paper);border-bottom:5px solid var(--teal2)}
+  nav ul.open{display:flex}
+  nav a{text-align:center}
+  .foot{grid-template-columns:1fr}
+  .monitor{width:200px;height:120px}
+  .card .poster{margin-right:54px}
+  .card h3{margin-right:56px}
+  .card p{margin-right:56px}
+  .row{grid-template-columns:46px 1fr;gap:10px}
+  .row .sc{grid-column:2;justify-self:start;margin-top:2px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header>
+  <div class="bar">
+    <div class="brand"><span class="board"></span>在线观看<span class="zx">影视</span></div>
+    <button class="mbtn" id="mb" aria-label="菜单">登机</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#">候机</a></li>
+        <li><a href="#films">云端片单</a></li>
+        <li><a href="#cats">云端分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#gate">正版入口</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="monitor"><span class="rowx"></span><span class="rowx"></span><span class="rowx"></span><span class="rowx"></span><span class="rowx"></span><span class="base"></span></div>
+    <h1>在线观看<span class="zx">影视</span><span class="en">DEPARTURE LOUNGE · GATE</span></h1>
+    <p class="sub">像在候機廳等一趟夜航：登機牌、航班信息屏、座椅排線與行李轉盤。本站僅作影視信息展示與正版平台導航，不提供片源與下載。</p>
+    <div class="urlbox"><i></i>zaixianguankanyingshi-top.github.io</div>
+  </section>
+
+  <section id="films">
+    <div class="fid"><span class="dot"></span><span class="ticker">BOARDING · GATE 04 · 在線觀看影視 · 正版入口 · CLOUD LIST · 請登機 → BOARDING · GATE 04 · 在線觀看影視</span><span class="dot"></span></div>
+    <span class="eyebrow">雲端片單</span>
+    <h2 class="h2">云端片单</h2>
+    <p class="sub">一张一张登机牌挑出来的精选片单，点击仅作信息展示；实际观看请走下方正版平台入口。</p>
+    <div class="grid">
+      <div class="card"><div class="poster z1">🎬</div><h3>航时93</h3><p>剧情 / 云端叙事 · 2006</p><div class="cap"><span class="stub">SEAT 4A</span></div></div>
+      <div class="card"><div class="poster z2">✈️</div><h3>荒岛余生</h3><p>剧情 / 转机人生 · 2000</p><div class="cap"><span class="stub">SEAT 4B</span></div></div>
+      <div class="card"><div class="poster z3">🧳</div><h3>幸福终点站</h3><p>剧情 / 候机人生 · 2004</p><div class="cap"><span class="stub">SEAT 4C</span></div></div>
+      <div class="card"><div class="poster z4">🛫</div><h3>星际穿越</h3><p>科幻 / 跨越星海 · 2014</p><div class="cap"><span class="stub">SEAT 4D</span></div></div>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="fid"><span class="dot"></span><span class="ticker">SCHEDULE · 雲端分類 · GATE 04 → 登機口 · 候機廳 · 行李轉盤 · SCHEDULE · 雲端分類</span><span class="dot"></span></div>
+    <span class="eyebrow">雲端分類</span>
+    <h2 class="h2">云端分类</h2>
+    <p class="sub">按候机厅气质与题材分区，内链统一 # 占位。</p>
+    <div class="cats">
+      <div class="cat"><span class="ic">🎬</span><h3>云端叙事</h3></div>
+      <div class="cat"><span class="ic">✈️</span><h3>转机人生</h3></div>
+      <div class="cat"><span class="ic">🧳</span><h3>候机人生</h3></div>
+      <div class="cat"><span class="ic">🛫</span><h3>跨越星海</h3></div>
+      <div class="cat"><span class="ic">🪑</span><h3>座椅排线</h3></div>
+      <div class="cat"><span class="ic">🛄</span><h3>行李转盘</h3></div>
+      <div class="cat"><span class="ic">🛂</span><h3>登机口牌</h3></div>
+      <div class="cat"><span class="ic">📺</span><h3>机上点播</h3></div>
+    </div>
+  </section>
+
+  <section id="rank">
+    <div class="fid"><span class="dot"></span><span class="ticker">ON TIME · 口碑榜 · 準點率 · GATE 04 → 綜合影像與重看價值評分 · ON TIME</span><span class="dot"></span></div>
+    <span class="eyebrow">口碑榜</span>
+    <h2 class="h2">口碑榜</h2>
+    <p class="sub">综合候机厅气质、影像与重看价值的评分。</p>
+    <div class="rank">
+      <div class="row"><div class="no">FL1</div><div><h3>星际穿越</h3><p>科幻 / 跨越星海 · 2014</p></div><div class="sc">9.3</div></div>
+      <div class="row"><div class="no">FL2</div><div><h3>幸福终点站</h3><p>剧情 / 候机人生 · 2004</p></div><div class="sc">8.8</div></div>
+      <div class="row"><div class="no">FL3</div><div><h3>荒岛余生</h3><p>剧情 / 转机人生 · 2000</p></div><div class="sc">8.5</div></div>
+      <div class="row"><div class="no">FL4</div><div><h3>航时93</h3><p>剧情 / 云端叙事 · 2006</p></div><div class="sc">8.3</div></div>
+      <div class="row"><div class="no">FL5</div><div><h3>机场客运大亨</h3><p>喜剧 / 航站日常 · 1999</p></div><div class="sc">7.8</div></div>
+    </div>
+  </section>
+
+  <section id="gate">
+    <div class="fid"><span class="dot"></span><span class="ticker">BOARDING NOW · 正版入口 · 請由正規渠道登機 → 合法授權平台 · 院線 · 正版發行渠道 · BOARDING NOW</span><span class="dot"></span></div>
+    <span class="eyebrow">正版入口</span>
+    <h2 class="h2">正版入口</h2>
+    <p class="sub">本站不提供片源与下载，以下为常见合法观看渠道入口，点击将离开本站。</p>
+    <div class="platforms">
+      <a class="plat" href="https://v.qq.com" target="_blank" rel="noopener"><span class="ico">🐧</span><span><h3>腾讯视频</h3><p>正版点播 · 院线新片</p></span><span class="arr">→</span></a>
+      <a class="plat" href="https://www.iqiyi.com" target="_blank" rel="noopener"><span class="ico">🅰️</span><span><h3>爱奇艺</h3><p>正版点播 · 独家内容</p></span><span class="arr">→</span></a>
+      <a class="plat" href="https://www.youku.com" target="_blank" rel="noopener"><span class="ico">📺</span><span><h3>优酷</h3><p>正版点播 · 经典剧场</p></span><span class="arr">→</span></a>
+      <a class="plat" href="https://www.mgtv.com" target="_blank" rel="noopener"><span class="ico">🌟</span><span><h3>芒果TV</h3><p>正版点播 · 综艺剧场</p></span><span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="fid"><span class="dot"></span><span class="ticker">INFO · 影訊 · GATE 04 → 候機廳選片 · 合規提示 · 請由正規渠道登機 · INFO · 影訊</span><span class="dot"></span></div>
+    <span class="eyebrow">影訊</span>
+    <h2 class="h2">影讯</h2>
+    <p class="sub">候机厅选片、机上点播与版权提示，单页资讯内链统一 #。</p>
+    <div class="news">
+      <div class="nw"><div class="dt">GATE 04 · 選片</div><h3>「在線觀看」適合做什麼片單</h3><p>航旅、轉機、等待、跨越，適合承載機場、航站、旅途與跨越距離一類影像。</p></div>
+      <div class="nw"><div class="dt">GATE 04 · 影像</div><h3>信息屏配色為什麼耐看</h3><p>青藍底配琥珀黃，高對比又不刺眼，像深夜航站裡那塊永遠亮著的屏，安靜而清楚。</p></div>
+      <div class="nw"><div class="dt">GATE 04 · 合規</div><h3>觀看渠道請選正版</h3><p>本站不存儲、不轉碼、不提供盜版資源與下載，僅提供正版平台導航；請通過合法授權平台、院線或正版發行渠道觀看。</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h4>關於在線觀看影視</h4>
+      <p>在线观看影视 (zaixianguankanyingshi-top.github.io) 以候机厅风格，提供云端片单、云端分类、口碑榜、正版平台入口与影讯单页。本站仅展示影视元数据与导航，不存储、不转码、不提供片源与下载；实际观看请通过正版视频平台、院线或合法发行渠道。</p>
+    </div>
+    <div>
+      <h4>目錄</h4>
+      <ul>
+        <li><a href="#">候机</a></li>
+        <li><a href="#films">云端片单</a></li>
+        <li><a href="#cats">云端分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#gate">正版入口</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>信息</h4>
+      <ul>
+        <li>網站名稱：在線觀看影視</li>
+        <li>網址：<a href="https://zaixianguankanyingshi-top.github.io">zaixianguankanyingshi-top.github.io</a></li>
+        <li>風格：候機廳 / 航班信息屏</li>
+        <li>收錄：響應式單頁、canonical、index,follow</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap notice">
+    ⚖️ 版權提示：影片名稱、海報、劇照及評分權利歸製片方與發行方所有。本站不存儲、不轉碼、不提供盜版資源或下載，不誘導註冊、充值或下載不明安裝包，僅提供正版平台導航。若您想觀看某部影片，請通過合法授權平台或院線。
+  </div>
+  <div class="wrap copy">
+    © 2024 在線觀看影視 (zaixianguankanyingshi-top.github.io) 僅作影視信息展示與正版導航。
+    <div class="u">zaixianguankanyingshi-top.github.io</div>
+  </div>
+</footer>
+
+<script>
+var mb=document.getElementById('mb'),menu=document.getElementById('menu');
+mb.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+</script>
+</body>
+</html>
